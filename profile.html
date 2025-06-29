@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Личный кабинет - OREN PODCAST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BOWLER:wght@400&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="fonts/fonts.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-container">
+            <div class="logo">
+              <img src="image/лого.png" alt="OREN PODCAST" />
+            </div>
+            <div class="logo-text">OREN PODCAST</div>
+          </div>
+          <div class="header-right">
+            <div class="header-contacts">
+              <div class="phone-numbers">
+                <a href="tel:+79878510846" class="nav-link-phone"
+                  >+7 (987) 851-08-46</a
+                >
+              </div>
+            </div>
+            <nav class="navigation">
+              <a href="index.html" class="nav-link">Главная</a>
+              <a href="contacts.html" class="nav-link">Контакты</a>
+              <a href="about.html" class="nav-link">Наш опыт</a>
+              <a href="services.html" class="nav-link">Услуги</a>
+              <a href="portfolio.html" class="nav-link">Локации</a>
+              <a href="reviews.html" class="nav-link">Отзывы</a>
+            </nav>
+            <button class="theme-toggle" aria-label="Сменить тему">
+              <i class="ti ti-sun"></i>
+            </button>
+            <button id="logout-btn" class="logout-button" aria-label="Выйти">
+              <i class="ti ti-logout"></i>
+            </button>
+            <button class="mobile-menu-btn" aria-label="Меню">
+              <i class="ti ti-menu-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+      <button class="mobile-menu-item theme-toggle">
+        <i class="ti ti-sun"></i>
+        <span>Сменить тему</span>
+      </button>
+      <button class="mobile-menu-item" id="mobile-logout-btn">
+        <i class="ti ti-logout"></i>
+        <span>Выйти</span>
+      </button>
+
+      <nav class="mobile-menu-nav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+        <a href="about.html" class="nav-link">Наш опыт</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="portfolio.html" class="nav-link">Локации</a>
+        <a href="reviews.html" class="nav-link">Отзывы</a>
+      </nav>
+    </div>
+
+    <!-- Account Section -->
+    <section class="account-section">
+      <div class="container">
+        <div class="account-header">
+          <div class="account-avatar" id="account-avatar">
+            <i class="ti ti-user"></i>
+          </div>
+          <div class="account-info">
+            <h2 id="account-name">Пользователь</h2>
+            <div class="account-email" id="account-email">user@example.com</div>
+          </div>
+        </div>
+
+        <div class="account-nav">
+          <a
+            href="#profile"
+            class="account-nav-link active"
+            data-section="profile"
+            >Профиль</a
+          >
+          <a href="#bookings" class="account-nav-link" data-section="bookings"
+            >Мои бронирования</a
+          >
+          <a href="#history" class="account-nav-link" data-section="history"
+            >История заказов</a
+          >
+          <a href="#settings" class="account-nav-link" data-section="settings"
+            >Настройки</a
+          >
+        </div>
+
+        <div class="account-content">
+          <!-- Profile Section -->
+          <div id="profile-content" class="account-content-section active">
+            <h3 class="account-section-title">Мой профиль</h3>
+            <form id="profile-form" class="profile-form">
+              <div class="profile-avatar-upload">
+                <div class="avatar-preview" id="avatar-preview">
+                  <i class="ti ti-user"></i>
+                </div>
+                <div class="avatar-upload-info">
+                  <h4>Фото профиля</h4>
+                  <p>Загрузите фотографию для вашего профиля</p>
+                  <div class="avatar-upload-btn btn btn-outline">
+                    <i class="ti ti-upload"></i>
+                    Загрузить фото
+                    <input type="file" id="avatar-upload" accept="image/*">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="profile-firstname" class="form-label">Имя</label>
+                <input type="text" id="profile-firstname" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="profile-lastname" class="form-label">Фамилия</label>
+                <input type="text" id="profile-lastname" class="form-control" required>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="profile-email" class="form-label">Email</label>
+                <input type="email" id="profile-email" class="form-control" required>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="profile-phone" class="form-label">Телефон</label>
+                <input type="tel" id="profile-phone" class="form-control" required>
+              </div>
+              
+              <div class="form-group full-width">
+                <button type="submit" class="btn btn-primary">
+                  <i class="ti ti-device-floppy"></i>
+                  Сохранить изменения
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Bookings Section -->
+          <div id="bookings-content" class="account-content-section">
+            <h3 class="account-section-title">Мои бронирования</h3>
+            <div id="bookings-list" class="bookings-list">
+              <!-- Бронирования будут загружены динамически -->
+            </div>
+          </div>
+
+          <!-- History Section -->
+          <div id="history-content" class="account-content-section">
+            <h3 class="account-section-title">История заказов</h3>
+            <div id="history-list" class="bookings-list">
+              <!-- История будет загружена динамически -->
+            </div>
+          </div>
+
+          <!-- Settings Section -->
+          <div id="settings-content" class="account-content-section">
+            <h3 class="account-section-title">Настройки</h3>
+            <form id="settings-form" class="profile-form">
+              <div class="form-group full-width">
+                <label class="form-label">Уведомления</label>
+                <div class="settings-option">
+                  <input type="checkbox" id="notifications-email" checked>
+                  <label for="notifications-email">Получать уведомления на email</label>
+                </div>
+                <div class="settings-option">
+                  <input type="checkbox" id="notifications-sms">
+                  <label for="notifications-sms">Получать SMS уведомления</label>
+                </div>
+              </div>
+              
+              <div class="form-group full-width">
+                <h4>Смена пароля</h4>
+                <div class="password-change">
+                  <div class="form-group">
+                    <label for="current-password" class="form-label">Текущий пароль</label>
+                    <input type="password" id="current-password" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="new-password" class="form-label">Новый пароль</label>
+                    <input type="password" id="new-password" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="confirm-new-password" class="form-label">Подтвердите новый пароль</label>
+                    <input type="password" id="confirm-new-password" class="form-control">
+                  </div>
+                  <button type="button" id="change-password-btn" class="btn btn-outline">
+                    <i class="ti ti-key"></i>
+                    Изменить пароль
+                  </button>
+                </div>
+              </div>
+              
+              <div class="form-group full-width">
+                <button type="submit" class="btn btn-primary">
+                  <i class="ti ti-device-floppy"></i>
+                  Сохранить настройки
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="footer-logo-container">
+              <a href="index.html" class="logo">
+                <img src="image/лого.png" alt="OREN PODCAST" />
+              </a>
+              <a href="index.html" class="footer-logo-text">OREN PODCAST</a>
+            </div>
+            <p class="footer-description">
+              Профессиональная студия съемки видеоподкастов в Оренбурге. Съемка,
+              монтаж, аренда студии.
+            </p>
+            <div class="footer-social">
+              <a href="https://wa.me/79878510846" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-whatsapp"></i>
+              </a>
+              <a href="https://t.me/orenpodcast" class="social-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-telegram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-nav">
+            <h3 class="footer-title">Навигация</h3>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Главная</a></li>
+              <li><a href="services.html" class="footer-link">Услуги</a></li>
+              <li><a href="portfolio.html" class="footer-link">Наш опыт</a></li>
+              <li><a href="about.html" class="footer-link">Локации</a></li>
+              <li><a href="reviews.html" class="footer-link">Отзывы</a></li>
+              <li><a href="contacts.html" class="footer-link">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-services">
+            <h3 class="footer-title">Услуги</h3>
+            <ul class="footer-links">
+              <li><a href="videography-landing.html" class="footer-link">Видеосъемка</a></li>
+              <li>
+                <a href="editing-landing.html" class="footer-link">Профессиональный монтаж</a>
+              </li>
+              <li><a href="rent-landing.html" class="footer-link">Аренда студии</a></li>
+              <li><a href="podcasts-landing.html" class="footer-link">Подкасты под ключ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contacts">
+            <h3 class="footer-title">Контакты</h3>
+            <div class="contact-item">
+              <i class="ti ti-phone"></i>
+              <a href="tel:+79878510846">+7 (987) 851-08-46</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-mail"></i>
+              <a href="mailto:timur_chopper@mail.ru">timur_chopper@mail.ru</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-map-pin"></i>
+              <a href="https://yandex.ru/maps/?text=г.%20Оренбург,%20ул.%20Комсомольская%2026" target="_blank" rel="noopener noreferrer">г. Оренбург, ул. Комсомольская 26, 0 этаж</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-clock"></i>
+              <span>Ежедневно с 9:00 до 21:00</span>
+            </div>
+            <div class="footer-cta">
+              <button
+                class="footer-button"
+                onclick="window.location.href='contacts.html'"
+              >
+                <i class="ti ti-phone-call"></i>
+                Свяжитесь с нами
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">© 2025 OREN PODCAST. Все права защищены</div>
+          <div class="footer-policy">
+            <a href="privacy-policy.html" class="policy-link">Политика конфиденциальности</a>
+            <a href="terms-of-service.html" class="policy-link">Договор оферты</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

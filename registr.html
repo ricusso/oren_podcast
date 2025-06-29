@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OREN PODCAST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BOWLER:wght@400&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/registr.css" />
+    <link rel="stylesheet" href="fonts/fonts.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-container">
+            <div class="logo">
+              <img src="image/лого.png" alt="OREN PODCAST" />
+            </div>
+            <div class="logo-text">OREN PODCAST</div>
+          </div>
+          <div class="header-right">
+            <div class="header-contacts">
+              <div class="phone-numbers">
+                <a href="tel:+79878510846" class="nav-link-phone"
+                  >+7 (987) 851-08-46</a
+                >
+              </div>
+            </div>
+            <nav class="navigation">
+              <a href="index.html" class="nav-link">Главная</a>
+              <a href="contacts.html" class="nav-link">Контакты</a>
+              <a href="about.html" class="nav-link">Наш опыт</a>
+              <a href="services.html" class="nav-link">Услуги</a>
+              <a href="portfolio.html" class="nav-link">Локации</a>
+              <a href="reviews.html" class="nav-link">Отзывы</a>
+            \
+            </nav>
+            <button class="theme-toggle" aria-label="Сменить тему">
+              <i class="ti ti-sun"></i>
+            </button>
+            <a
+              href="registr.html"
+              class="account-icon"
+              aria-label="Личный кабинет"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
+                  fill="#FD8502"
+                />
+                <path
+                  d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z"
+                  fill="#FD8502"
+                />
+              </svg>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+              <i class="ti ti-menu-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+      <a href="registr.html" class="mobile-menu-item">
+        <i class="ti ti-user"></i>
+        <span>Личный кабинет</span>
+      </a>
+      <button class="mobile-menu-item theme-toggle">
+        <i class="ti ti-sun"></i>
+        <span>Сменить тему</span>
+      </button>
+
+      <nav class="mobile-menu-nav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+        <a href="about.html" class="nav-link">Наш опыт</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="portfolio.html" class="nav-link">Локации</a>
+        <a href="reviews.html" class="nav-link">Отзывы</a>
+      </nav>
+    </div>
+
+    <!-- Основной контент страницы регистрации -->
+    <main class="main-content">
+      <section class="auth-section">
+        <div class="container">
+          <div class="auth-container">
+            <div class="auth-tabs">
+              <div class="auth-tab active" data-tab="login">Вход</div>
+              <div class="auth-tab" data-tab="register">Регистрация</div>
+            </div>
+
+            <!-- Форма входа -->
+            <form id="login-form" class="auth-form active">
+              <div class="form-group">
+                <label for="login-email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="login-email"
+                  class="form-control"
+                  placeholder="Введите ваш email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="login-password" class="form-label">Пароль</label>
+                <input
+                  type="password"
+                  id="login-password"
+                  class="form-control"
+                  placeholder="Введите пароль"
+                  required
+                />
+              </div>
+              <div class="form-footer">
+                <button type="submit" class="btn btn-primary">Войти</button>
+                <a href="#" class="form-link" id="forgot-password">Забыли пароль?</a>
+                <div class="form-text">
+                  Для демонстрации используйте: demo@example.com / 123456
+                </div>
+              </div>
+            </form>
+
+            <!-- Форма регистрации -->
+            <form id="register-form" class="auth-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="register-firstname" class="form-label">Имя</label>
+                  <input
+                    type="text"
+                    id="register-firstname"
+                    class="form-control"
+                    placeholder="Ваше имя"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="register-lastname" class="form-label">Фамилия</label>
+                  <input
+                    type="text"
+                    id="register-lastname"
+                    class="form-control"
+                    placeholder="Ваша фамилия"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="register-email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="register-email"
+                  class="form-control"
+                  placeholder="Введите ваш email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="register-phone" class="form-label">Телефон</label>
+                <input
+                  type="tel"
+                  id="register-phone"
+                  class="form-control"
+                  placeholder="+7 (___) ___-__-__"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="register-password" class="form-label">Пароль</label>
+                <input
+                  type="password"
+                  id="register-password"
+                  class="form-control"
+                  placeholder="Придумайте пароль"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="register-confirm-password" class="form-label">Подтвердите пароль</label>
+                <input
+                  type="password"
+                  id="register-confirm-password"
+                  class="form-control"
+                  placeholder="Повторите пароль"
+                  required
+                />
+              </div>
+              <div class="form-footer">
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                <div class="form-text">
+                  Регистрируясь, вы соглашаетесь с 
+                  <a href="terms-of-service.html" class="form-link">условиями использования</a> и 
+                  <a href="privacy-policy.html" class="form-link">политикой конфиденциальности</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="footer-logo-container">
+              <a href="index.html" class="logo">
+                <img src="image/лого.png" alt="OREN PODCAST" />
+              </a>
+              <a href="index.html" class="footer-logo-text">OREN PODCAST</a>
+            </div>
+            <p class="footer-description">
+              Профессиональная студия съемки видеоподкастов в Оренбурге. Съемка,
+              монтаж, аренда студии.
+            </p>
+            <div class="footer-social">
+              <a href="https://wa.me/79878510846" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-whatsapp"></i>
+              </a>
+              <a href="https://t.me/orenpodcast" class="social-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-telegram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-nav">
+            <h3 class="footer-title">Навигация</h3>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Главная</a></li>
+              <li><a href="services.html" class="footer-link">Услуги</a></li>
+              <li><a href="portfolio.html" class="footer-link">Наш опыт</a></li>
+              <li><a href="about.html" class="footer-link">Локации</a></li>
+              <li><a href="reviews.html" class="footer-link">Отзывы</a></li>
+              <li><a href="contacts.html" class="footer-link">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-services">
+            <h3 class="footer-title">Услуги</h3>
+            <ul class="footer-links">
+              <li><a href="videography-landing.html" class="footer-link">Видеосъемка</a></li>
+              <li>
+                <a href="editing-landing.html" class="footer-link">Профессиональный монтаж</a>
+              </li>
+              <li><a href="rent-landing.html" class="footer-link">Аренда студии</a></li>
+              <li><a href="podcasts-landing.html" class="footer-link">Подкасты под ключ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contacts">
+            <h3 class="footer-title">Контакты</h3>
+            <div class="contact-item">
+              <i class="ti ti-phone"></i>
+              <a href="tel:+79878510846">+7 (987) 851-08-46</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-mail"></i>
+              <a href="mailto:timur_chopper@mail.ru">timur_chopper@mail.ru</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-map-pin"></i>
+              <a href="https://yandex.ru/maps/?text=г.%20Оренбург,%20ул.%20Комсомольская%2026" target="_blank" rel="noopener noreferrer">г. Оренбург, ул. Комсомольская 26, 0 этаж</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-clock"></i>
+              <span>Ежедневно с 9:00 до 21:00</span>
+            </div>
+            <div class="footer-cta">
+              <button
+                class="footer-button"
+                onclick="window.location.href='contacts.html'"
+              >
+                <i class="ti ti-phone-call"></i>
+                Свяжитесь с нами
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">© 2025 OREN PODCAST. Все права защищены</div>
+          <div class="footer-policy">
+            <a href="privacy-policy.html" class="policy-link">Политика конфиденциальности</a>
+            <a href="terms-of-service.html" class="policy-link">Договор оферты</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

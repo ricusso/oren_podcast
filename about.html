@@ -1,0 +1,1425 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OREN PODCAST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BOWLER:wght@400&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="fonts/fonts.css">
+  </head>
+  <style>/* Timeline Section */
+.timeline-section {
+  background: var(--bg-primary);
+  transition: var(--transition);
+
+}
+
+.timeline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 140px;
+
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-year-container {
+  position: relative;
+}
+
+.timeline-year {
+  color: var(--orange);
+  font-family: "BOWLER", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.timeline-arrow {
+  position: absolute;
+  left: 10px;
+  top: 100%;
+  height: 306px;
+  width: 2px;
+  background-color: var(--orange);
+  margin-top: 10px;
+}
+.timeline-arrow-two {
+  position: absolute;
+  left: 10px;
+  top: 100%;
+  height: 316px;
+  width: 2px;
+  background-color: var(--orange);
+  margin-top: 10px;
+}
+
+.timeline-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--orange);
+}
+.timeline-arrow-two:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--orange);
+}
+
+.timeline-item:last-child .timeline-arrow {
+  display: none;
+}
+
+.timeline-content {
+  color: var(--text-primary);
+  background: var(--bg-card);
+  padding: 52px 130px;
+  border-radius: 12px;
+  margin-bottom: 95px;
+  transition: var(--transition);
+  box-sizing: border-box; /* Добавляем для корректного расчета размеров */
+  overflow-wrap: break-word; /* Предотвращаем переполнение текстом */
+  box-sizing: border-box; /* Добавляем для корректного расчета размеров */
+  overflow-wrap: break-word; /* Предотвращаем переполнение текстом */
+}
+
+.timeline-title {
+  color: var(--text-primary);
+  font-family: "BOWLER", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.timeline-description {
+  color: var(--text-primary);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  max-width: 640px; /* Изменяем на max-width для лучшей адаптивности */
+  width: 100%; /* Добавляем width: 100% */
+  transition: var(--transition);
+}
+
+/* Mobile Responsiveness for Timeline */
+@media (max-width: 1024px) {
+  .timeline-item {
+    grid-template-columns: 150px 1fr; /* Уменьшаем колонку с годами */
+    gap: 60px; /* Уменьшаем gap */
+  }
+  
+  .timeline-content {
+    padding: 30px 40px;
+  }
+  
+  .timeline-description {
+    width: 100%;
+  }
+  
+  .timeline-arrow,
+  .timeline-arrow-two {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 40px 0; /* Уменьшаем вертикальные отступы на мобильных */
+  }
+  
+  .timeline-container {
+    padding: 0 15px; /* Отступы контейнера 15px */
+  }
+  
+  .timeline-item {
+    display: block; /* Убираем grid layout */
+    gap: 0;
+    margin-bottom: 0; /* Убираем отступы между items */
+  }
+  
+  .timeline-year-container {
+    display: none; /* Скрываем цифры полностью */
+  }
+  
+  .timeline-content {
+    padding: 20px 15px; /* Отступы 15px по бокам, 20px сверху/снизу */
+    margin: 0 0 20px 0; /* Отступы между блоками */
+    width: 100%; /* Растягиваем на всю ширину */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+    border-radius: 12px; /* Сохраняем скругление */
+    background: var(--bg-card); /* Убеждаемся что фон применяется */
+  }
+  
+  .timeline-title {
+    font-size: 20px;
+    margin-bottom: 15px; /* Уменьшаем отступ после заголовка */
+    line-height: 1.2; /* Улучшаем читаемость */
+  }
+  
+  .timeline-description {
+    font-size: 16px;
+    line-height: 1.5; /* Улучшаем читаемость */
+    width: 100%; /* Убеждаемся что ширина 100% */
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-section {
+    padding: 30px 0; /* Еще больше уменьшаем вертикальные отступы */
+  }
+  
+  .timeline-container {
+    padding: 0 15px; /* Отступы контейнера 15px */
+  }
+  
+  .timeline-content {
+    padding: 15px; /* Отступы 15px со всех сторон */
+    margin: 0 0 15px 0; /* Уменьшаем отступы между блоками */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+    width: 100%; /* Полная ширина */
+    min-height: auto; /* Автоматическая высота */
+  }
+  
+  .timeline-title {
+    font-size: 18px;
+    margin-bottom: 12px; /* Уменьшаем отступ после заголовка */
+    line-height: 1.3; /* Оптимизируем высоту строки */
+  }
+  
+  .timeline-description {
+    font-size: 14px;
+    line-height: 1.4; /* Оптимизируем читаемость */
+    width: 100%; /* Полная ширина */
+    word-wrap: break-word; /* Переносим длинные слова */
+  }
+}
+
+@media (max-width: 375px) {
+  .timeline-section {
+    padding: 20px 0; /* Минимальные вертикальные отступы */
+  }
+  
+  .timeline-container {
+    padding: 0 10px; /* Еще меньше отступы контейнера */
+  }
+  
+  .timeline-content {
+    padding: 12px; /* Минимальные отступы */
+    margin: 0 0 12px 0; /* Минимальные отступы между блоками */
+    border-radius: 8px; /* Меньше скругление */
+  }
+  
+  .timeline-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  
+  .timeline-description {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+/* About Me Section */
+.about-me-section {
+  background: var(--bg-primary);
+  padding: 80px 0;
+
+  transition: var(--transition);
+}
+
+.about-me-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  color: var(--orange);
+  font-family: "BOWLER", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  transition: var(--transition);
+}
+
+.about-me-content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  
+}
+
+.about-me-image {
+  position: relative;
+}
+
+.profile-image {
+  width: 600px;
+  height: 560px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-me-text {
+  color: var(--text-primary);
+  width: 600px;
+  background: var(--bg-card);
+  padding: 34px 34px;
+  height: 560px;
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.about-me-name {
+  color: var(--orange);
+  font-family: "BOWLER", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about-me-subtitle {
+  color: var(--orange);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.about-me-description p {
+  color: var(--text-primary);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+/* Mobile Responsiveness for About Me */
+@media (max-width: 1024px) {
+  .about-me-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-me-image,
+  .about-me-text {
+    width: 100%;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .about-me-text {
+    height: auto;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me-section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 36px;
+   
+  }
+  
+  .about-me-description p {
+    font-size: 16px;
+  }
+  
+  .about-me-text {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-container {
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .about-me-text {
+    padding: 20px;
+  }
+  
+  .about-me-description p {
+    font-size: 14px;
+  }
+  
+  .about-me-name {
+    font-size: 18px;
+  }
+  
+  .profile-image {
+    height: 300px;
+  }
+}
+
+/* Timeline Section */
+.timeline-section {
+  background: var(--bg-primary);
+  transition: var(--transition);
+  padding-top: 80px ;
+}
+
+.timeline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+ 
+  align-items: flex-start;
+}
+
+.timeline-year {
+  color: var(--orange);
+  font-family: "BOWLER", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.timeline-content {
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.timeline-title {
+  color: var(--text-primary);
+  font-family: "BOWLER", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.timeline-description {
+  color: var(--text-primary);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  transition: var(--transition);
+}
+/* Equipment Section */
+.equipment {
+  padding: 60px 0;
+  background: var(--bg-primary);
+  transition: var(--transition);
+}
+
+.equipment-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+ 
+}
+
+.equipment .section-title {
+  color: var(--orange);
+}
+
+.equipment .section-subtitle {
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.equipment .section-divider {
+  background: var(--text-primary);
+  transition: var(--transition);
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 8px;
+  margin-top: 60px;
+}
+
+.equipment-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 10px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  gap: 16px;
+  transition: var(--transition);
+}
+
+.equipment-title {
+  color: var(--orange);
+  font-family: "BOWLER", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.equipment-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.equipment-description {
+  color: var(--text-primary);
+  font-family: "Montserrat", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  transition: var(--transition);
+}
+
+.equipment-details {
+  color: var(--text-primary);
+  font-family: "Montserrat", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+/* Works Section */
+.works {
+  padding: 60px 0;
+  background: var(--bg-primary);
+  transition: var(--transition);
+}
+
+.works-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.works .section-title {
+  color: var(--orange);
+}
+
+.works .section-subtitle {
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.works .section-divider {
+  background: var(--text-primary);
+  transition: var(--transition);
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 60px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 10px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  gap: 16px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+}
+
+.work-title {
+  color: var(--orange);
+  font-family: "BOWLER", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.video-container-works {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.work-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Скрываем контролы по умолчанию */
+.work-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.work-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* Показываем контролы при ошибке или если видео не может быть воспроизведено */
+.work-video.show-controls {
+  pointer-events: auto;
+}
+
+.work-video.show-controls::-webkit-media-controls {
+  display: flex !important;
+}
+
+.work-video.show-controls::-webkit-media-controls-enclosure {
+  display: flex !important;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(253, 133, 2, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.play-button i {
+  color: white;
+  font-size: 24px;
+  margin-left: 4px;
+}
+
+.video-container-works:hover .play-button {
+  background: rgba(253, 133, 2, 0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Дополнительные стили для полноэкранного видео */
+.work-video:hover {
+  opacity: 0.9;
+}
+
+.video-container-works:hover {
+  box-shadow: 0 8px 25px rgba(253, 133, 2, 0.3);
+}
+
+/* Стили для полноэкранного режима */
+.work-video:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+  cursor: default !important;
+}
+
+.work-video:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+  cursor: default !important;
+}
+
+.work-video:-moz-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+  cursor: default !important;
+}
+
+.work-video:-ms-fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain !important;
+  background: #000 !important;
+  cursor: default !important;
+}
+
+/* Показываем контролы в полноэкранном режиме */
+.work-video:fullscreen::-webkit-media-controls {
+  display: flex !important;
+}
+
+.work-video:-webkit-full-screen::-webkit-media-controls {
+  display: flex !important;
+}
+
+.work-video.fullscreen-active {
+  cursor: default;
+}
+
+/* Анимация перехода в полноэкранный режим */
+.work-video {
+  transition: all 0.3s ease;
+}
+
+/* Стили для контейнера видео работ */
+.video-container-works {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+}
+
+/* Стили для кнопки воспроизведения */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(253, 133, 2, 0.8);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+.play-button:hover {
+  background: rgba(253, 133, 2, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 20px rgba(253, 133, 2, 0.4);
+}
+
+.play-button i {
+  color: white;
+  font-size: 28px;
+  margin-left: 3px; /* Небольшой сдвиг для визуального центрирования треугольника */
+}
+
+/* Стили для видео элемента */
+.work-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.work-video:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+/* Отключаем стандартные контролы видео */
+.work-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.work-video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.work-video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.work-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* Эффекты при наведении */
+.video-container-works:hover .play-button {
+  background: rgba(253, 133, 2, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-container-works:hover .work-video {
+  opacity: 0.9;
+}
+
+.video-container-works:hover {
+  box-shadow: 0 8px 25px rgba(253, 133, 2, 0.3);
+}
+
+/* Стили для видео отзывов в полноэкранном режиме */
+.vertical-video:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background: #000;
+}
+
+.vertical-video:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background: #000;
+}
+
+.vertical-video:-moz-full-screen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background: #000;
+}
+
+.vertical-video:-ms-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Анимация для кнопки воспроизведения */
+.play-button:hover {
+  background: rgba(253, 133, 2, 1);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Индикатор того, что видео кликабельно */
+.video-container-works::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.video-container-works:hover::before {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.work-description {
+  color: var(--text-primary);
+  font-family: "Montserrat", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  transition: var(--transition);
+}
+
+/* Индикатор загрузки видео */
+.video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--orange);
+  font-size: 14px;
+  z-index: 3;
+  display: none;
+}
+
+.video-loading.show {
+  display: block;
+}
+
+.video-loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Улучшенные стили для кнопки воспроизведения */
+.play-button {
+  transition: all 0.3s ease;
+  z-index: 4;
+}
+
+.play-button:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Стили для успешно загруженного видео */
+.work-video.loaded {
+  opacity: 1;
+}
+
+.work-video.loading {
+  opacity: 0.7;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 835px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  color: #fd8502;
+  font-family: "BOWLER", -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 100%;
+  max-width: 328px;
+  height: 1px;
+  background: var(--text-primary);
+}
+
+.section-subtitle {
+  color: var(--text-primary);
+  font-family: "Montserrat", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+</style>
+  <body class="about-page">
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-container">
+            <div class="logo">
+              <img src="image/лого.png" alt="OREN PODCAST" />
+            </div>
+            <div class="logo-text">OREN PODCAST</div>
+          </div>
+          <div class="header-right">
+            <div class="header-contacts">
+              <div class="phone-numbers">
+                <a href="tel:+79878510846" class="nav-link-phone"
+                  >+7 (987) 851-08-46</a
+                >
+              </div>
+            </div>
+            <nav class="navigation">
+              <a href="index.html" class="nav-link">Главная</a>
+              <a href="contacts.html" class="nav-link">Контакты</a>
+              <a href="about.html" class="nav-link">Наш опыт</a>
+              <a href="services.html" class="nav-link">Услуги</a>
+              <a href="portfolio.html" class="nav-link">Локации</a>
+              <a href="reviews.html" class="nav-link">Отзывы</a>
+            </nav>
+            <button class="theme-toggle" aria-label="Сменить тему">
+              <i class="ti ti-sun"></i>
+            </button>
+            <a
+              href="registr.html"
+              class="account-icon"
+              aria-label="Личный кабинет"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
+                  fill="#FD8502"
+                />
+                <path
+                  d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z"
+                  fill="#FD8502"
+                />
+              </svg>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню">
+              <i class="ti ti-menu-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+      <a href="registr.html" class="mobile-menu-item">
+        <i class="ti ti-user"></i>
+        <span>Личный кабинет</span>
+      </a>
+      <button class="mobile-menu-item theme-toggle">
+        <i class="ti ti-sun"></i>
+        <span>Сменить тему</span>
+      </button>
+
+      <nav class="mobile-menu-nav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+        <a href="about.html" class="nav-link">Наш опыт</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="portfolio.html" class="nav-link">Локации</a>
+        <a href="reviews.html" class="nav-link">Отзывы</a>
+      </nav>
+    </div>
+
+   <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="hero-title">наш опыт</div>
+      </div>
+    </div>
+    
+ <section class="about-me-section">
+      <div class="about-me-container">
+      <div class="section-header">
+          <div class="section-title-container">
+            <h2 class="section-title">обо мне</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p class="section-subtitle">
+          Тимур Юсуфбаев: от федеральных каналов до собственной студии
+          </p>
+        </div>
+        <div class="about-me-content">
+          <div class="about-me-image">
+            <img
+              src="image/b5250200c3e115f961149a93937aeb2e41d0f8ba.jpg"
+              alt="Тимур Рзабаев"
+              class="profile-image"
+            />
+          </div>
+          <div class="about-me-text">
+            <h3 class="about-me-name">
+              Профессиональный видеооператор Тимур Юсуфбаев с 14-летним опытом работы.
+            </h3>
+           
+            <div class="about-me-description">
+              <p>
+                Начал свою карьеру в 2010 году как фотографических заказчик.
+              </p>
+              <p>
+                За годы работы накопил огромный опыт в постановке задач видео
+                качества, в постановке задач для различных мероприятий.
+              </p>
+              <p>
+                В 2019 году открыл собственную студию в Оренбурге, чтобы
+                предоставлять клиентам высокое услуги профессионального и
+                монтажа для частных киноменов.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!-- Timeline Section -->
+<section class="timeline-section">
+  <div class="timeline-container">
+    <div class="timeline-item">
+      <div class="timeline-year-container">
+        <div class="timeline-year">2010-2023гг</div>
+        <div class="timeline-arrow"></div>
+      </div>
+      <div class="timeline-content">
+        <h3 class="timeline-title">РАБОТА НА ФЕДЕРАЛЬНЫХ КАНАЛАХ</h3>
+        <p class="timeline-description">
+          14 лет опыта работы операторам на ведущих телевизионных каналах
+          России. Участие в съемках новостных программ, документальных
+          фильмов и развлекательных передач. Профессиональные фильмы<br />Новые
+          фильмы<br />Документальные фильмы эксклюзивной продукции
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year-container">
+        <div class="timeline-year">2023г</div>
+        <div class="timeline-arrow-two"></div>
+      </div>
+      <div class="timeline-content">
+        <h3 class="timeline-title">СТАТУС САМОЗАНЯТОГО</h3>
+        <p class="timeline-description">
+          Официальное оформление статуса самозанятого для предоставления
+          профессиональных услуг видеосъемки и монтажа частным клиентам и
+          организациям.<br />Регулярные поездки деятельности<br />Производство
+          крупно-звёзд операций<br />Профессиональные отчетные документов<br />Главных
+          качества услуг
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year-container">
+        <div class="timeline-year">2025г</div>
+      </div>
+      <div class="timeline-content">
+        <h3 class="timeline-title">ОТКРЫТИЕ СТУДИИ ВИДЕОПОДКАСТОВ</h3>
+        <p class="timeline-description">
+          Запуск собственной профессиональной студии в Оренбурге с
+          оснащенной современным оборудованием для создания видеоподкастов
+          любых направлений.<br />Профессиональная студия 40 кв.м<br />Современное
+          оборудование<br />Полного набор настроек и элементов<br />Индивидуальный
+          подход к клиентам
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Equipment Section -->
+    <section class="equipment">
+      <div class="equipment-container">
+        <div class="section-header">
+          <div class="section-title-container">
+            <h2 class="section-title">оборудование</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p class="section-subtitle">
+            Мы используем только лучшее и качественное оборудование
+          </p>
+        </div>
+        <div class="equipment-grid">
+          <div class="equipment-card">
+            <h3 class="equipment-title">Световое оборудование</h3>
+            <img
+              src="image/свет.png"
+              alt="Камеры"
+              class="equipment-image"
+            />
+            <p class="equipment-description">
+Свет - важное состовляющее для создания атмосферы. Мы используем свет ULANZI и GODOX, а также различные софт боксы и RGB подсветки           </p>
+            
+          </div>
+          <div class="equipment-card">
+            <h3 class="equipment-title">петличные микрофоны</h3>
+            <img
+              src="image/микро.png"
+              alt="Звуковое оборудование"
+              class="equipment-image"
+            />
+            <p class="equipment-description">
+Мы используем петличные микрофоны 6000X MOVELINK M1. Комплект до двух человек  
+            </p>
+           
+          </div>
+          <div class="equipment-card">
+            <h3 class="equipment-title">Телесуфлер</h3>
+            <img
+              src="image/телесуфлер.png"
+              alt="Световое оборудование"
+              class="equipment-image"
+            />
+            <p class="equipment-description">
+Для обучающих курсов и экспертных видео у нас есть дополнительная услуга:  
+Аренда телесуфлера            </p>
+           
+          </div>
+          <div class="equipment-card">
+            <h3 class="equipment-title">Камеры линейки sony</h3>
+            <img
+              src="image/сони.png"
+              alt="Монтажное оборудование"
+              class="equipment-image"
+            />
+            <p class="equipment-description">
+Мы используем парк современных камер Sony и оригинальные объективы Sony, что позволяет записывать идеальную картинку с разрешением 4K  
+            </p>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- Works Section -->
+<section class="works">
+  <div class="works-container">
+    <div class="section-header">
+      <div class="section-title-container">
+        <h2 class="section-title">Наши работы</h2>
+        <div class="section-divider"></div>
+      </div>
+      <p class="section-subtitle">
+        Примеры наших последних проектов и видеоработ<br>
+        <small style="color: #fd8502; font-size: 14px;">💡 Нажмите на видео для просмотра в полноэкранном режиме</small>
+      </p>
+    </div>
+    <div class="works-grid">
+      <!-- Видео работа 1 -->
+      <div class="work-card">
+        
+        <div class="video-container-works">
+          <video class="work-video" poster="image/image 47 (1).png" preload="metadata" src="video/Честно Про Отношения.mp4" onclick="event.preventDefault(); openVideoPlayer(this)">
+            <source src="video/Честно Про Отношения.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+          <div class="play-button" onclick="openVideoPlayer(this.previousElementSibling)">
+            <i class="ti ti-player-play-filled"></i>
+          </div>
+        </div>
+        <h3 class="work-title">честно “про отношения”</h3>
+        <p class="work-description">
+В гостях: <br> Елена Ларионова <br>
+Сергей Волков <br>
+Елизавета Яковенко        </p>
+      </div>
+      
+      <!-- Видео работа 2 -->
+      <div class="work-card">
+       
+        <div class="video-container-works">
+          <video class="work-video" poster="image/Frame 41 (4).png" preload="metadata" src="video/Подкаст_Евген и Тахир_v04.mp4" onclick="event.preventDefault(); openVideoPlayer(this)">
+            <source src="video/Подкаст_Евген и Тахир_v04.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+          <div class="play-button" onclick="openVideoPlayer(this.previousElementSibling)">
+            <i class="ti ti-player-play-filled"></i>
+          </div>
+        </div>
+         <h3 class="work-title">Психология на миллион</h3>
+        <p class="work-description">
+         В гостях: <br> Тахир Хайдаров <br>
+Евгений Гревцев
+        </p>
+      </div>
+      
+     
+      
+      <!-- Видео работа 4 -->
+      <div class="work-card">
+      
+        <div class="video-container-works">
+          <video class="work-video" poster="image/IMG_20250601_191217_349 1.png" preload="metadata" src="video/Не по шаблону.mp4" onclick="event.preventDefault(); openVideoPlayer(this)">
+            <source src="video/Не по шаблону.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+          <div class="play-button" onclick="openVideoPlayer(this.previousElementSibling)">
+            <i class="ti ti-player-play-filled"></i>
+          </div>
+        </div>
+         <h3 class="work-title">путь не по шаблону</h3>
+        <p class="work-description">
+          В гостях: <br>Алина Яльчибаева<br>
+Елена Бородавкина
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="footer-logo-container">
+              <a href="index.html" class="logo">
+                <img src="image/лого.png" alt="OREN PODCAST" />
+              </a>
+              <a href="index.html" class="footer-logo-text">OREN PODCAST</a>
+            </div>
+            <p class="footer-description">
+              Профессиональная студия съемки видеоподкастов в Оренбурге. Съемка,
+              монтаж, аренда студии.
+            </p>
+            <div class="footer-social">
+              <a href="https://wa.me/79878510846" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-whatsapp"></i>
+              </a>
+              <a href="https://t.me/orenpodcast" class="social-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-telegram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-nav">
+            <h3 class="footer-title">Навигация</h3>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Главная</a></li>
+              <li><a href="services.html" class="footer-link">Услуги</a></li>
+              <li><a href="portfolio.html" class="footer-link">Наш опыт</a></li>
+              <li><a href="about.html" class="footer-link">Локации</a></li>
+              <li><a href="reviews.html" class="footer-link">Отзывы</a></li>
+              <li><a href="contacts.html" class="footer-link">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-services">
+            <h3 class="footer-title">Услуги</h3>
+            <ul class="footer-links">
+              <li><a href="videography-landing.html" class="footer-link">Видеосъемка</a></li>
+              <li>
+                <a href="editing-landing.html" class="footer-link">Профессиональный монтаж</a>
+              </li>
+              <li><a href="rent-landing.html" class="footer-link">Аренда студии</a></li>
+              <li><a href="podcasts-landing.html" class="footer-link">Подкасты под ключ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contacts">
+            <h3 class="footer-title">Контакты</h3>
+            <div class="contact-item">
+              <i class="ti ti-phone"></i>
+              <a href="tel:+79878510846">+7 (987) 851-08-46</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-mail"></i>
+              <a href="mailto:timur_chopper@mail.ru">timur_chopper@mail.ru</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-map-pin"></i>
+              <a href="https://yandex.ru/maps/?text=г.%20Оренбург,%20ул.%20Комсомольская%2026" target="_blank" rel="noopener noreferrer">г. Оренбург, ул. Комсомольская 26, 0 этаж</a>
+            </div>
+            <div class="contact-item">
+              <i class="ti ti-clock"></i>
+              <span>Ежедневно с 9:00 до 21:00</span>
+            </div>
+            <div class="footer-cta">
+              <button
+                class="footer-button"
+                onclick="window.location.href='contacts.html'"
+              >
+                <i class="ti ti-phone-call"></i>
+                Свяжитесь с нами
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">© 2025 OREN PODCAST. Все права защищены</div>
+          <div class="footer-policy">
+            <a href="privacy-policy.html" class="policy-link">Политика конфиденциальности</a>
+            <a href="terms-of-service.html" class="policy-link">Договор оферты</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+  </body>
+</html>
